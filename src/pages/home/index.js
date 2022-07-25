@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import Header from "../../components/header";
 import Card from "../../components/card";
-
 import { API_URL } from "../../constants";
-
+import './index.scss'
 
 const Home = () => {
   const [apiData, setAPIData] = useState();
@@ -12,7 +11,8 @@ const Home = () => {
     return await fetch(API_URL);
   };
 
-  useEffect(() => {
+ 
+useEffect(() => {
     //Fetch data
     fetchPlantsData()
       .then((response) => response.json())
@@ -20,8 +20,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="App">
-      <Header />
+    <div>
+      <Header/>
       <main>
         <div className="card-container">
           {apiData &&
